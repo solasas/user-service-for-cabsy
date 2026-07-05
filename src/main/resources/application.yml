@@ -1,0 +1,23 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:postgresql://localhost:5433/cabsy_user
+    username: cabsy
+    password: cabsy
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+cabsy:
+  jwt:
+    secret: ${CABSY_JWT_SECRET:c2FzaGFua3NjYWJzeXVzZXJzZXJ2aWNlc2VjcmV0a2V5Zm9yandzaGdtYWM=}
+    expiration-ms: 86400000
